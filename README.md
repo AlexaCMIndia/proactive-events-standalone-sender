@@ -4,7 +4,7 @@ This project aims at simplifying sending proactive events to a skill from an ext
 
 For each one of the skills configured in [```skills.json```](./skills.json), this code performs the following operations:
 1. Obtains an authentication token from Alexa by using the skill's ```client_id``` and ```client_secret```.
-2. Uses the authentication token obtained in the previous step to *broadcast* notifications to those users of the skill that granted permissions to notifications. Sent events follow the [```AMAZON.MessageAlert.Activated```](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert) schema. You can edit the event template in [```message-template.json```](./message-template.json) if you need to; the property ```messageAlert.event.payload.messageGroup.creator.name``` in the template is overridden at runtime using the ```message``` property provided in [```skills.json```](./skills.json).
+2. Uses the authentication token obtained in the previous step to *broadcast* notifications to those users of the skill that granted permissions to notifications. Sent events follow the [```AMAZON.MessageAlert.Activated```](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert) schema. You can edit the event template in [```message-template.json```](./message-template.json) if you need to. The property ```messageAlert.event.payload.messageGroup.creator.name``` in the template is overridden at runtime using the ```message``` property provided in [```skills.json```](./skills.json).
 
 [```skills.json```](./skills.json) is an array of objects with the following properties:
 
