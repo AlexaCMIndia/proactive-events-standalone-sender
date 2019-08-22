@@ -72,7 +72,7 @@ To download project dependencies simply run the following in the project root:
 
     npm install
 
-### Howto run
+### How to run
 
 You need to pass the following command line arguments:
 * ```environment```: whether the target events will be sent to the ```live``` or ```development``` endpoints. Allowed values are ```dev``` and ```pro```.
