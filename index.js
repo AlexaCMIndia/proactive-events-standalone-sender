@@ -73,7 +73,7 @@ async function sendNotification(skill, config){
             console.log("Event sent successfully. statusCode: " + response.statusCode);
         })
         .catch(function (err){
-            console.log("caught error while sending proactive event to skill " + skill.skill_name, 
+            console.log(JSON.stringify(err) + skill.skill_name, 
                 JSON.stringify(err, null, 2));
             return err;
         });
@@ -86,30 +86,30 @@ var parser = new ArgumentParser({
     version: '1.0.0',
     addHelp:true,
     description: 'Alexa proactive events standalone process.'
-  });
+});
 
-  parser.addArgument(
+parser.addArgument(
     [ '-e', '--environment' ],
     {
         required:true,
         help: 'Used to choose the Alexa endpoint to send proactive events. Possible values are "dev" or "pro".'
     }
-  );
+);
 
-  parser.addArgument(
+parser.addArgument(
     [ '-r', '--region' ],
     {
         required:true,
         help: 'Choose the region of the Alexa endpoint to use to send proactive events. Possible values are "NA", "FE" or "EU".'
     }
-  );
+);
 
-  parser.addArgument(
+parser.addArgument(
     [ '-m', '--message' ],
     {
         help: 'The message to send to the configured skills, this overrides the "message" property in skills.json'
     }
-  );
+);
 
 var args = parser.parseArgs();
 console.dir(args);

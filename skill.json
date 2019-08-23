@@ -1,0 +1,50 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom"
+        }
+      }
+    },
+    "permissions": [
+      {
+        "name": "alexa::devices:all:notifications:write"
+      }
+    ],
+    "events": {
+      "publications": [
+        {
+          "eventName": "AMAZON.MessageAlert.Activated"
+        }
+      ],
+      "endpoint": {
+        "uri": "** TODO: REPLACE WITH YOUR Lambda ARN after created **"
+      },
+      "subscriptions": [
+        {
+          "eventName": "SKILL_PROACTIVE_SUBSCRIPTION_CHANGED"
+        }
+      ]
+    },
+    "privacyAndCompliance": {
+      "locales": {
+        "es-ES": {}
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Events Demo Skill"
+        },
+        "es-ES": {
+          "name": "Demo de Eventos",
+          "examplePhrases": [],
+          "keywords": []
+        }
+      },
+      "isAvailableWorldwide": true,
+      "distributionCountries": []
+    }
+  }
+}
